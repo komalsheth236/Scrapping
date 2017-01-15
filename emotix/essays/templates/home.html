@@ -1,0 +1,19 @@
+<html>
+<h1>Paste url here</h1>
+<form action= '#' method = 'POST'>{% csrf_token %}
+<input type="text" name="link" id="link" class="form-control" placeholder="Link here!" required autofocus>
+</br>
+<p>In case the home page url is pasted you may choose number of pages to be crwaled. By defualt it crwals only single page.</p>
+<input type="text" name="page" id="page" class="form-control" placeholder="No. of pages">
+</br>
+<p>The file is saved in JSON format under project directory.</p>
+ <input class="btn btn btn_primary"  type="submit"  value="Crwal">
+{% if status == 'success' %}
+ 	<p>file succesfully saved </p>
+{% endif %}
+
+{% if status == 'failed' %}
+ 	<p>Invalid url</p>
+{% endif %}
+</form>
+</html>
