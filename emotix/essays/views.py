@@ -44,11 +44,9 @@ def essays_home(request):
 
 
 def crawl(max_pages):
-	page = 1
-	while page <= max_pages:
+	for page in range(int(1,max_pages)+1):
 		url = "https://www.essayforkids.com/page/"+ str(page) + "/"
 		get_catalogue(url)  	
-	page += 1
 
 def get_catalogue(url):
 	source_code = requests.get(url) #scrapping url here
